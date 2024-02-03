@@ -16,72 +16,98 @@ namespace CSLibraryExtension
                 Console.Write($"{o[i]}, ");
             }
             Console.Write($"{o[o.Length - 1]}]");
+            Console.WriteLine();
         }
         public static void Rotate(int[] nums, int k)
         {
-            /***
-             * Kalau k lebih dari length maka sederhanakan k
-             * dengan cara k modulo dari length array
-             * 
-             * jika k = 0 sama aja dengan tidak merotasi sama sekali
+            /**
+             * Buat pointer
              */
-            k = k % nums.Length;
-            if (k == 0) return;
+            int moves = 0;
+            int sweep = 0;
 
-            /***
-             * Idenya adalah
-             * Reverse dulu nums, urutannya masih ga bener dan tujuan dari rotate sudah terpenuhi
-             * Tinggal perbaiki sisanya
-             */
-            Array.Reverse(nums); // O(n) dimana n adalah panjang array
-            
-            int kiri = k, kanan = nums.Length - 1, temp;
-            for (int i = k; i < kanan; i++) //asumsi O(n)
+            while (moves < nums.Length)
             {
-                /***
-                 * ilustrasi flow
+                /**
+                 * Ilustrasi
+                 * sweep = 0
+                 * current = sweep => current = 0
                  * 
-                 * nums = [1,2,3,4,5,6,7,8]
-                 * k = 3
-                 * 
-                 * dan kiri = k, juga kanan = nums.Length - 1
-                 * berarti pointer kiri mengarah ke =>
-                 * [1,2,3,4,5,6,7,8]
-                 *        ^kiri
-                 * dan pointer kanan mengarah ke =>
-                 * [1,2,3,4,5,6,7,8]
-                 *                ^kanan
-                 * 
-                 * temp = nums[kiri] => temp = nums[3] => temp = 4
-                 * nums[kiri] = nums[kanan] => nums[3] = 8
-                 * nums sementara jadi 
-                 * [1,2,3,8,5,6,7,8]
-                 *        ^ nilai sebelumnya 4, sudah ditaruh di variabel temp
-                 *        
-                 * nums[kanan] = temp => nums[kanan] = 4 karena nilai temp adalah nums[kiri] sebelumnya
-                 * nums sementara jadi
-                 * [1,2,3,8,5,6,7,4]
-                 *                ^ nilai sebelumnya 8, diganti dengan nilai nums[kiri] yang udah ditaruh di variabel temp
-                 * note: kira-kira begitu, karena diatas nums[] udah kita reverse(). Idenya adalah reverse balik in-plaace
-                 * 
-                 * terakhir geser pointer, kiri dan kanan geser satu nilai
+                 * prev = temp = nums[sweep] => temp = nums[0]
                  */
-                temp = nums[kiri];
-                nums[kiri] = nums[kanan];
-                nums[kanan] = temp;
-                kiri++; kanan--;
-            }
+                int curr = sweep; // kayak i dalam for
+                int prev = nums[sweep]; // karena var temp udah ada di dalam loop. jadi dibuat dua temp, dan ini salah satunya. Disebutlah prev
 
-            kiri = 0; kanan = k - 1;
-            for (int i = 0; i < kanan; i++) // asumsi O(n)
-            {
-                temp = nums[kiri];
-                nums[kiri] = nums[kanan];
-                nums[kanan] = temp;
-                kiri++; kanan--;
-            }
+                do
+                {
+                    /**
+                     * nextIndex = (current + k) % nums.Length
+                     * sebutlah
+                     * 
+                     * nums = [1,2,3,4,5,6,7,8]
+                     * 
+                     * current = 0, k = 3, dan length = 8
+                     * ada modulo sebagai penyederhana kalau lebih dari Length
+                     * jadi hasilnya
+                     * nextIndex = 3 walaupun 3 mod 8 = 3
+                     * 
+                     * [1,2,3,4,5,6,7,8]
+                     *        ^nextIndex
+                     *        
+                     * [1,2,3,4,5,6,7,8]
+                     *  ^sweep = i
+                     */
+                    int nextIndex = (curr + k) % nums.Length;
 
-            //PrintArray(nums);
+                    /**
+                     * temp = nums[nextIndex] => temp = nums[3]
+                     * sementara temp ini sebagai temp dari kanan
+                     * 
+                     * temp = 4
+                     */
+                    int temp = nums[nextIndex];
+
+                    /**
+                     * masih tau kan nextIndex saat i = 0 berapa? nextIndex = 3
+                     * Nah disini ditiban sama nilai prev yang diatas tadi => prev = nums[0] => prev = 1
+                     * 
+                     * [1,2,3,1,5,6,7,8]
+                     *  ^prev ^nI
+                     */
+                    nums[nextIndex] = prev;
+
+                    /**
+                     * Inget ya, prev dan temp ini adalah "sama" dalam tanda kutip
+                     * yang asli beroperasi adalah prev sedangkan temp sebagai "pointer"ish
+                     * 
+                     * prev = 4 karena tadi temp = 4
+                     */
+                    prev = temp;
+
+                    /**
+                     * pointer current = nextIndex
+                     * current = 3
+                     * nanti nextIndex dikasih nilai baru lagi diatas
+                     */
+                    curr = nextIndex;
+
+                    moves++;
+                    Console.WriteLine("do");
+                    PrintArray(nums);
+                } while (sweep != curr && moves < nums.Length); //sama kayak while (sweep != curr && moves < nums.Length)
+                /**
+                 * Diputaran pertama yuk liat dapet berapa
+                 * sweep = 0 nanti diinkremen kalau do while diatas selesai. but when?
+                 * curr = 3
+                 * moves = 1 karna udah diinkremen
+                 * nums.Length = 8 ya iyalah
+                 */
+
+                sweep++;
+                Console.WriteLine("out do");
+                PrintArray(nums);
+
+            }
         }
     }
 }

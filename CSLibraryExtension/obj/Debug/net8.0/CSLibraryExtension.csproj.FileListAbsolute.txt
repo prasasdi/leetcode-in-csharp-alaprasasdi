@@ -9,3 +9,4 @@ C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\C
 C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\refint\CSLibraryExtension.dll
 C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\CSLibraryExtension.pdb
 C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\ref\CSLibraryExtension.dll
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\CSLibraryExtension.sourcelink.json
