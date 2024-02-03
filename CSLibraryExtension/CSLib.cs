@@ -96,6 +96,9 @@ namespace CSLibraryExtension
             RomawiMap.Add('D', 500);
             RomawiMap.Add('M', 1000);
 
+            /**
+             * Mulai dari belakang karena jatuhnya lebih mudah 
+             */
             int result = 0, index = s.Length - 1, current = 0, nextValue;
             
             // sampai Length - 1
@@ -104,10 +107,13 @@ namespace CSLibraryExtension
                 current = RomawiMap[s[index]];
                 nextValue = RomawiMap[s[index - 1]];
 
-                if (current > nextValue) //misal X > I (o) atau V > I (o) atau M(1000) > C(100)
+                if (current > nextValue)
                 {
+                    /*
+                     * Setelah melakukan operasi pengurangan pada nilai IV, IX dan sejenisnya
+                     * kita lewatin index setelah current. Nanti juga digeser lagi
+                     */
                     result = result + (current - nextValue); //misal X(10) - I(1) => temp = IX(9) atau V(5) - I(1) => temp = IV(4)
-                    Console.WriteLine($"{current} - {nextValue} = {result}");
                     index--;
                 }
                 else
@@ -117,11 +123,14 @@ namespace CSLibraryExtension
 
                 index--;
             }
-            Console.WriteLine(index);
+
+            /*
+             * Index = -1 mengindikasi bahwa ada operasi romawi yang lebih kecil dilakukan diloop terakhir. Maka lewatin aja
+             * Misal CMLII
+             */
             if (index != -1)
                 result = result + RomawiMap[s[0]];
 
-            Console.WriteLine(result);
             return result;
         }
     }
