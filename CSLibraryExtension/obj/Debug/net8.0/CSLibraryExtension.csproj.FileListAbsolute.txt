@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\bin\Debug\net8.0\CSLibraryExtension.deps.json
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\bin\Debug\net8.0\CSLibraryExtension.dll
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\bin\Debug\net8.0\CSLibraryExtension.pdb
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\CSLibraryExtension.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\CSLibraryExtension.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\CSLibraryExtension.AssemblyInfo.cs
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\CSLibraryExtension.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\CSLibraryExtension.dll
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\refint\CSLibraryExtension.dll
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\CSLibraryExtension.pdb
+C:\Users\User\source\repos\CSCustomLibrary\CSLibraryExtension\obj\Debug\net8.0\ref\CSLibraryExtension.dll
