@@ -17,3 +17,11 @@ C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\obj\Debug\net8.0\Unit
 C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\obj\Debug\net8.0\UnitTestProgram.genruntimeconfig.cache
 C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\obj\Debug\net8.0\ref\UnitTestProgram.dll
 C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\obj\Debug\net8.0\UnitTestProgram.sourcelink.json
+C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\bin\Debug\net8.0\NUnit3.TestAdapter.dll
+C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\bin\Debug\net8.0\NUnit3.TestAdapter.pdb
+C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\bin\Debug\net8.0\nunit.engine.dll
+C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\bin\Debug\net8.0\nunit.engine.api.dll
+C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\bin\Debug\net8.0\nunit.engine.core.dll
+C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\bin\Debug\net8.0\testcentric.engine.metadata.dll
+C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\bin\Debug\net8.0\nunit.framework.dll
+C:\Users\User\source\repos\CSCustomLibrary\UnitTestProgram\bin\Debug\net8.0\nunit.framework.legacy.dll

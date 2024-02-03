@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace CSLibraryExtension
 {
@@ -132,6 +133,27 @@ namespace CSLibraryExtension
                 result = result + RomawiMap[s[0]];
 
             return result;
+        }
+
+        public static string IntToRoman(int num)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            while (num != 0)
+            {
+                if (num >= 1000)
+                {
+                    num -= 1000;
+                    stringBuilder.Append("M");
+                }
+                else if (num < 1000 && num >= 900)
+                {
+                    num -= 900;
+                    stringBuilder.Append("CM");
+                }
+            }
+            Console.WriteLine(stringBuilder.ToString());
+            return stringBuilder.ToString();
         }
     }
 }
