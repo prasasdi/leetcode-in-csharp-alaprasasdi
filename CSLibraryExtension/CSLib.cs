@@ -4,6 +4,10 @@ namespace CSLibraryExtension
 {
     public class CSLib
     {
+        /// <summary>
+        /// Print those bad bois up to your favourite terminal
+        /// </summary>
+        /// <param name="o">Your bad bois array of integers</param>
         private static void PrintArray(int[] o)
         {
             Console.Write("[");
@@ -29,10 +33,10 @@ namespace CSLibraryExtension
              * Reverse dulu nums, urutannya masih ga bener dan tujuan dari rotate sudah terpenuhi
              * Tinggal perbaiki sisanya
              */
-            Array.Reverse(nums);
+            Array.Reverse(nums); // O(n) dimana n adalah panjang array
             
             int kiri = k, kanan = nums.Length - 1, temp;
-            for (int i = k; i < kanan; i++) 
+            for (int i = k; i < kanan; i++) //asumsi O(n)
             {
                 /***
                  * ilustrasi flow
@@ -69,43 +73,15 @@ namespace CSLibraryExtension
             }
 
             kiri = 0; kanan = k - 1;
-            for (int i = 0; i < kanan; i++)
+            for (int i = 0; i < kanan; i++) // asumsi O(n)
             {
-                /***
-                 * ilustrasi flow
-                 * 
-                 * nums = [1,2,3,4,5,6,7,8]
-                 * k = 3
-                 * 
-                 * dan kiri = k, juga kanan = nums.Length - 1
-                 * berarti pointer kiri mengarah ke =>
-                 * [1,2,3,4,5,6,7,8]
-                 *        ^kiri
-                 * dan pointer kanan mengarah ke =>
-                 * [1,2,3,4,5,6,7,8]
-                 *                ^kanan
-                 * 
-                 * temp = nums[kiri] => temp = nums[3] => temp = 4
-                 * nums[kiri] = nums[kanan] => nums[3] = 8
-                 * nums sementara jadi 
-                 * [1,2,3,8,5,6,7,8]
-                 *        ^ nilai sebelumnya 4, sudah ditaruh di variabel temp
-                 *        
-                 * nums[kanan] = temp => nums[kanan] = 4 karena nilai temp adalah nums[kiri] sebelumnya
-                 * nums sementara jadi
-                 * [1,2,3,8,5,6,7,4]
-                 *                ^ nilai sebelumnya 8, diganti dengan nilai nums[kiri] yang udah ditaruh di variabel temp
-                 * note: kira-kira begitu, karena diatas nums[] udah kita reverse(). Idenya adalah reverse balik in-plaace
-                 * 
-                 * terakhir geser pointer, kiri dan kanan geser satu nilai
-                 */
                 temp = nums[kiri];
                 nums[kiri] = nums[kanan];
                 nums[kanan] = temp;
                 kiri++; kanan--;
             }
 
-            PrintArray(nums);
+            //PrintArray(nums);
         }
     }
 }
