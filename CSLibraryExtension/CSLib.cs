@@ -96,14 +96,13 @@ namespace CSLibraryExtension
             RomawiMap.Add('D', 500);
             RomawiMap.Add('M', 1000);
 
-            char[] chars = s.ToCharArray();
-            int result = 0, index = chars.Length - 1, current = 0, nextValue;
+            int result = 0, index = s.Length - 1, current = 0, nextValue;
             
             // sampai Length - 1
             while (index > 0)
             {
-                current = RomawiMap[chars[index]];
-                nextValue = RomawiMap[chars[index - 1]];
+                current = RomawiMap[s[index]];
+                nextValue = RomawiMap[s[index - 1]];
 
                 if (current > nextValue) //misal X > I (o) atau V > I (o) atau M(1000) > C(100)
                 {
@@ -120,7 +119,7 @@ namespace CSLibraryExtension
             }
             Console.WriteLine(index);
             if (index != -1)
-                result = result + RomawiMap[chars[0]];
+                result = result + RomawiMap[s[0]];
 
             Console.WriteLine(result);
             return result;
