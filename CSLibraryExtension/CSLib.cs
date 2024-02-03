@@ -84,7 +84,7 @@ namespace CSLibraryExtension
             }
         }
 
-        public static int RomansToInt(string s)
+        public static int RomanToInt(string s)
         {
             //buat dulu HashMap
             Dictionary<char, int> RomawiMap = new Dictionary<char, int>();
@@ -105,9 +105,10 @@ namespace CSLibraryExtension
                 current = RomawiMap[chars[index]];
                 nextValue = RomawiMap[chars[index - 1]];
 
-                if (current > nextValue) //misal X > I (o)
+                if (current > nextValue) //misal X > I (o) atau V > I (o) atau M(1000) > C(100)
                 {
-                    result = result + (current - nextValue); //misal X(10) - I(1) => temp = IX(9)
+                    result = result + (current - nextValue); //misal X(10) - I(1) => temp = IX(9) atau V(5) - I(1) => temp = IV(4)
+                    Console.WriteLine($"{current} - {nextValue} = {result}");
                     index--;
                 }
                 else
@@ -117,8 +118,11 @@ namespace CSLibraryExtension
 
                 index--;
             }
-            result = result + RomawiMap[chars[0]];
+            Console.WriteLine(index);
+            if (index != -1)
+                result = result + RomawiMap[chars[0]];
 
+            Console.WriteLine(result);
             return result;
         }
     }
