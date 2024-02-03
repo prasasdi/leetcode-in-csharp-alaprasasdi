@@ -8,7 +8,7 @@ namespace CSLibraryExtension
         /// Print those bad bois up to your favourite terminal
         /// </summary>
         /// <param name="o">Your bad bois array of integers</param>
-        private static void PrintArray(int[] o)
+        private static void PrintArray(object[] o)
         {
             Console.Write("[");
             for (int i = 0; i < o.Length - 1; i++)
@@ -82,6 +82,44 @@ namespace CSLibraryExtension
                  */
                 sweep++;
             }
+        }
+
+        public static int RomansToInt(string s)
+        {
+            //buat dulu HashMap
+            Dictionary<char, int> RomawiMap = new Dictionary<char, int>();
+            RomawiMap.Add('I', 1);
+            RomawiMap.Add('V', 5);
+            RomawiMap.Add('X', 10);
+            RomawiMap.Add('L', 50);
+            RomawiMap.Add('C', 100);
+            RomawiMap.Add('D', 500);
+            RomawiMap.Add('M', 1000);
+
+            char[] chars = s.ToCharArray();
+            int result = 0, index = chars.Length - 1, current = 0, nextValue;
+            
+            // sampai Length - 1
+            while (index > 0)
+            {
+                current = RomawiMap[chars[index]];
+                nextValue = RomawiMap[chars[index - 1]];
+
+                if (current > nextValue) //misal X > I (o)
+                {
+                    result = result + (current - nextValue); //misal X(10) - I(1) => temp = IX(9)
+                    index--;
+                }
+                else
+                {
+                    result = result + current;
+                }
+
+                index--;
+            }
+            result = result + RomawiMap[chars[0]];
+
+            return result;
         }
     }
 }
