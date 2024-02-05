@@ -138,21 +138,99 @@ namespace CSLibraryExtension
         public static string IntToRoman(int num)
         {
             StringBuilder stringBuilder = new StringBuilder();
+            Dictionary<int, char> RomawiMap = new Dictionary<int, char>();
 
-            while (num != 0)
+            RomawiMap.Add(1, 'I');
+            RomawiMap.Add(5, 'V');
+            RomawiMap.Add(10, 'X');
+            RomawiMap.Add(50, 'L');
+            RomawiMap.Add(100, 'C');
+            RomawiMap.Add(500, 'D');
+            RomawiMap.Add(1000, 'M');
+
+            //int length = num.ToString().Length;
+
+            while(num != 0)
             {
-                if (num >= 1000)
+                if (1000 <= num) //range 1000 and beyond
                 {
                     num -= 1000;
                     stringBuilder.Append("M");
                 }
-                else if (num < 1000 && num >= 900)
+                else
+                if (900 <= num && num < 1000) //range 900 sampai 999
                 {
                     num -= 900;
                     stringBuilder.Append("CM");
                 }
+                else
+                if (500 <= num && num < 900) //range 500 sampai 899
+                {
+                    num -= 500;
+                    stringBuilder.Append("D");
+                }
+                else
+                if (400 <= num && num < 500) //range 400 sampai 499
+                {
+                    num -= 400;
+                    stringBuilder.Append("CD");
+                }
+                else
+                if (100 <= num && num < 400) //range 100 sampai 399
+                {
+                    num -= 100;
+                    stringBuilder.Append("C");
+                }
+                else
+                if (90 <= num && num < 100) //range 90 sampai 99
+                {
+                    num -= 90;
+                    stringBuilder.Append("XC");
+                }
+                else
+                if (50 <= num && num < 90) //range 50 sampai 89
+                {
+                    num -= 50;
+                    stringBuilder.Append("L");
+                }
+                else
+                if (40 <= num && num < 50) //range 40 sampai 49
+                {
+                    num -= 40;
+                    stringBuilder.Append("XL");
+                }
+                else
+                if (10 <= num && num < 40) //range 10 sampai 39
+                {
+                    num -= 10;
+                    stringBuilder.Append("X");
+                }
+                else
+                if (9 == num)
+                {
+                    num -= 9;
+                    stringBuilder.Append("IX");
+                }
+                else
+                if (5 <= num && num < 9) //range 5 sampai 8
+                {
+                    num -= 5;
+                    stringBuilder.Append("V");
+                }
+                else
+                if (4 == num)
+                {
+                    num -= 4;
+                    stringBuilder.Append("IV");
+                }
+                else
+                if (1 <= num && num < 4) //range 0 sampai 3
+                {
+                    num -= 1;
+                    stringBuilder.Append("I");
+                }
             }
-            Console.WriteLine(stringBuilder.ToString());
+
             return stringBuilder.ToString();
         }
     }

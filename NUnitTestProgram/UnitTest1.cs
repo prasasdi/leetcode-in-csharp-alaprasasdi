@@ -10,15 +10,44 @@ namespace NUnitTestProgram
         }
 
         [Test]
-        public void GetRomanToInt_Test01()
+        public void GetRomanToInt_Test_01()
         {
             // assign
-            string s = "CMLII";
          
             // act
 
             // assert
-            Assert.AreEqual(952, CSLib.RomanToInt(s));
+            Assert.AreEqual("III", CSLib.IntToRoman(3));
+        }
+        [Test]
+        public void GetRomanToInt_CaseEasyJoinRomans()
+        {
+            // assign
+
+            // act
+
+            // assert
+            Assert.AreEqual("IV", CSLib.IntToRoman(4));
+        }
+        [Test]
+        public void GetRomanToInt_JoinRomansAndOneRoman()
+        {
+            // assign
+
+            // act
+
+            // assert
+            Assert.AreEqual("VI", CSLib.IntToRoman(6));
+        }
+        [Test]
+        public void GetRomanToInt_CaseHardJoinRomans()
+        {
+            // assign
+
+            // act
+
+            // assert
+            Assert.AreEqual("MCMXCIV", CSLib.IntToRoman(1994));
         }
     }
 }
