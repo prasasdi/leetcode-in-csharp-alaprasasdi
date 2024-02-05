@@ -138,17 +138,6 @@ namespace CSLibraryExtension
         public static string IntToRoman(int num)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            Dictionary<int, char> RomawiMap = new Dictionary<int, char>();
-
-            RomawiMap.Add(1, 'I');
-            RomawiMap.Add(5, 'V');
-            RomawiMap.Add(10, 'X');
-            RomawiMap.Add(50, 'L');
-            RomawiMap.Add(100, 'C');
-            RomawiMap.Add(500, 'D');
-            RomawiMap.Add(1000, 'M');
-
-            //int length = num.ToString().Length;
 
             while(num != 0)
             {
