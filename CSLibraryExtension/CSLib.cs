@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using CSLibraryExtension.Solutions;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace CSLibraryExtension
@@ -87,6 +88,11 @@ namespace CSLibraryExtension
 
         public static int RomanToInt(string s)
         {
+            /**
+             * Refactor ticket: 06-FEB-2024-RomanToInt
+             * 
+             * remove use of dictionaty<> and refactor comparison operator
+             */
             //buat dulu HashMap
             Dictionary<char, int> RomawiMap = new Dictionary<char, int>();
             RomawiMap.Add('I', 1);
