@@ -34,7 +34,7 @@
             while(l1 != null)
             {
                 i++;
-                l1.val = l1.val + l2.val; //l1.val as ressult operation bilangan, paksain if l2 == null ? 0 : l2.val
+                l1.val = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val); //l1.val as ressult operation bilangan, paksain if l2 == null ? 0 : l2.val
                 Console.WriteLine("loop ke " + i);
 
                 if (l1.val > 9)
@@ -59,7 +59,19 @@
 
                 }
                 l1 = l1.next;
-                l2 = l2.next == null ? new ListNode() : l2.next;
+                if (l2.next == null)
+                {
+                    Console.WriteLine("altered");
+                    l2 = l1;
+                    l2.val = 0;
+                }
+                else
+                {
+                    Console.WriteLine("no altered");
+                    l2 = l2.next;
+                }
+
+                //l2 = l2.next == null ? l1 : l2.next;
             }
             return head;
         }

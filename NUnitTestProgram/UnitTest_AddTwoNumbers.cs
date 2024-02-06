@@ -67,11 +67,7 @@ namespace NUnitTestProgram
                 next = new ListNode()
                 {
                     val = 9,
-                    next = new ListNode()
-                    {
-                        val = 9,
-                        next = null
-                    }
+                    next = null
                 }
             };
             l2 = new ListNode() // l2 = [9,9,9]
@@ -80,7 +76,11 @@ namespace NUnitTestProgram
                 next = new ListNode()
                 {
                     val = 9,
-                    next = null
+                    next = new ListNode()
+                    {
+                        val = 9,
+                        next = null
+                    }
                 }
             };
 
