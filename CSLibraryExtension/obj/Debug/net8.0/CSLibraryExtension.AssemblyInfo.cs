@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSLibraryExtension")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f63cb58b04382f79420ad39aedec2ccd7af6b30")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSLibraryExtension")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSLibraryExtension")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
